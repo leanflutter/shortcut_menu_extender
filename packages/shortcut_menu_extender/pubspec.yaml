@@ -1,0 +1,25 @@
+name: shortcut_menu_extender
+description: "A new Flutter plugin project."
+version: 0.0.1
+homepage: https://github.com/leanflutter/shortcut_menu_extender
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shortcut_menu_extender_platform_interface: ^0.0.1
+  shortcut_menu_extender_windows: ^0.0.1
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      windows:
+        default_package: shortcut_menu_extender_windows
