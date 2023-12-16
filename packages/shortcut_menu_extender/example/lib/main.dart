@@ -1,10 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:shortcut_menu_extender/shortcut_menu_extender.dart';
 
-void main() {
+void main(List<String> args) {
+  if (shortcutMenuExtenderCommand.runIfNeeded(args)) exit(0);
   runApp(const MyApp());
 }
 
@@ -32,7 +35,8 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await _shortcutMenuExtenderPlugin.getPlatformVersion() ?? 'Unknown platform version';
+          await _shortcutMenuExtenderPlugin.getPlatformVersion() ??
+              'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -55,7 +59,29 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            children: [
+              Text('Running on: $_platformVersion\n'),
+              ElevatedButton(
+                onPressed: () {
+                  shortcutMenuExtender.register(
+                    'MyFlutterApp',
+                    name: 'OpenWithMyFlutterApp',
+                    executable: Platform.resolvedExecutable,
+                  );
+                },
+                child: const Text('register'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  shortcutMenuExtender.unregister(
+                    'MyFlutterApp',
+                  );
+                },
+                child: const Text('unregister'),
+              ),
+            ],
+          ),
         ),
       ),
     );

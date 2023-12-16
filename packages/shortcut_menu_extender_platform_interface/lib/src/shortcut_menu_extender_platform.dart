@@ -26,4 +26,17 @@ abstract class ShortcutMenuExtenderPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> register(
+    String key, {
+    required String name,
+    required String executable,
+    String? icon,
+  }) {
+    throw UnimplementedError('register() has not been implemented.');
+  }
+
+  Future<void> unregister(String key) {
+    throw UnimplementedError('register() has not been implemented.');
+  }
 }
