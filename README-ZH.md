@@ -30,6 +30,7 @@
     - [注册/取消注册](#注册取消注册)
     - [监听事件](#监听事件)
   - [谁在用使用它？](#谁在用使用它)
+  - [赞助者](#赞助者)
   - [许可证](#许可证)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -187,6 +188,16 @@ class _HomePageState extends State<HomePage> with ShortcutMenuListener {
 ## 谁在用使用它？
 
 - [闪电藤](https://github.com/cmlanche/lightningvine-docs) - 基于LocalSend二次开发的一款局域网文件传输工具
+
+## 赞助者
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/cmlanche"><img src="https://avatars.githubusercontent.com/u/5886757?v=4?s=100" width="100px;" alt="cmlanche"/><br /><sub><b>cmlanche</b></sub></a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## 许可证
 
