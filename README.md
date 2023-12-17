@@ -1,13 +1,11 @@
 # shortcut_menu_extender
 
-[![pub version][pub-image]][pub-url] [![][discord-image]][discord-url] ![][visits-count-image] 
+[![pub version][pub-image]][pub-url] [![][discord-image]][discord-url] ![][visits-count-image]
 
 [pub-image]: https://img.shields.io/pub/v/shortcut_menu_extender.svg
 [pub-url]: https://pub.dev/packages/shortcut_menu_extender
-
 [discord-image]: https://img.shields.io/discord/884679008049037342.svg
 [discord-url]: https://discord.gg/zPa6EZ2jqb
-
 [visits-count-image]: https://img.shields.io/badge/dynamic/json?label=Visits%20Count&query=value&url=https://api.countapi.xyz/hit/leanflutter.shortcut_menu_extender/visits
 
 This plugin allows Flutter apps to Extending global shortcut menus.
@@ -21,12 +19,12 @@ English | [简体中文](./README-ZH.md)
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [shortcut\_menu\_extender](#shortcut_menu_extender)
+- [shortcut_menu_extender](#shortcut_menu_extender)
   - [Platform Support](#platform-support)
   - [Quick Start](#quick-start)
     - [Installation](#installation)
     - [Usage](#usage)
-        - [Windows](#windows)
+      - [Windows](#windows)
     - [Register/Unregister](#registerunregister)
     - [Listening events](#listening-events)
   - [Who's using it?](#whos-using-it)
@@ -39,7 +37,7 @@ English | [简体中文](./README-ZH.md)
 
 | Linux | macOS | Windows |
 | :---: | :---: | :-----: |
-|   ➖   |   ➖   |    ✔️    |
+|  ➖   |  ➖   |   ✔️    |
 
 ## Quick Start
 
@@ -184,10 +182,6 @@ class _HomePageState extends State<HomePage> with ShortcutMenuListener {
 ```
 
 > Please see the example app of this plugin for a full example.
-
-## Who's using it?
-
-- [闪电藤](https://github.com/cmlanche/lightningvine-docs) - 基于LocalSend二次开发的一款局域网文件传输工具
 
 ## Sponsors
 

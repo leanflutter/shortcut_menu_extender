@@ -1,13 +1,11 @@
 # shortcut_menu_extender
 
-[![pub version][pub-image]][pub-url] [![][discord-image]][discord-url] ![][visits-count-image] 
+[![pub version][pub-image]][pub-url] [![][discord-image]][discord-url] ![][visits-count-image]
 
 [pub-image]: https://img.shields.io/pub/v/shortcut_menu_extender.svg
 [pub-url]: https://pub.dev/packages/shortcut_menu_extender
-
 [discord-image]: https://img.shields.io/discord/884679008049037342.svg
 [discord-url]: https://discord.gg/zPa6EZ2jqb
-
 [visits-count-image]: https://img.shields.io/badge/dynamic/json?label=Visits%20Count&query=value&url=https://api.countapi.xyz/hit/leanflutter.shortcut_menu_extender/visits
 
 这个插件允许 Flutter 应用扩展全局快捷菜单。
@@ -21,12 +19,12 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [shortcut\_menu\_extender](#shortcut_menu_extender)
+- [shortcut_menu_extender](#shortcut_menu_extender)
   - [平台支持](#平台支持)
   - [快速开始](#快速开始)
     - [安装](#安装)
     - [用法](#用法)
-        - [Windows](#windows)
+      - [Windows](#windows)
     - [注册/取消注册](#注册取消注册)
     - [监听事件](#监听事件)
   - [谁在用使用它？](#谁在用使用它)
@@ -39,7 +37,7 @@
 
 | Linux | macOS | Windows |
 | :---: | :---: | :-----: |
-|   ➖   |   ➖   |    ✔️    |
+|  ➖   |  ➖   |   ✔️    |
 
 ## 快速开始
 
@@ -184,10 +182,6 @@ class _HomePageState extends State<HomePage> with ShortcutMenuListener {
 ```
 
 > 请看这个插件的示例应用，以了解完整的例子。
-
-## 谁在用使用它？
-
-- [闪电藤](https://github.com/cmlanche/lightningvine-docs) - 基于LocalSend二次开发的一款局域网文件传输工具
 
 ## 赞助者
 
