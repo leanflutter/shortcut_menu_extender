@@ -8,13 +8,13 @@ environment:
   flutter: ">=3.3.0"
 
 dependencies:
+  args: ^2.4.2
+  ffi: ^2.1.0
   flutter:
     sdk: flutter
   shortcut_menu_extender_platform_interface: ^0.0.1
-  ffi: ^2.1.0
   win32: ^5.1.1
   win32_registry: ^1.1.2
-  args: ^2.4.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0

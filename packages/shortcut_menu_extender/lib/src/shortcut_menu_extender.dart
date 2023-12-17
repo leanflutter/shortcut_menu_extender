@@ -9,17 +9,26 @@ class ShortcutMenuExtender {
     String key, {
     required String name,
     required String executable,
-    String? icon,
+    bool useDefaultIcon = true,
   }) {
     return ShortcutMenuExtenderPlatform.instance.register(
       key,
       name: name,
       executable: executable,
+      useDefaultIcon: useDefaultIcon,
     );
   }
 
   Future<void> unregister(String key) {
     return ShortcutMenuExtenderPlatform.instance.unregister(key);
+  }
+
+  void addListener(ShortcutMenuListener listener) {
+    return ShortcutMenuExtenderPlatform.instance.addListener(listener);
+  }
+
+  void removeListener(ShortcutMenuListener listener) {
+    return ShortcutMenuExtenderPlatform.instance.removeListener(listener);
   }
 }
 

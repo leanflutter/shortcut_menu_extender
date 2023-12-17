@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:args/args.dart';
 import 'package:win32_registry/win32_registry.dart';
 
+const _kCommandMain = 'shortcut_menu_extender';
 const _kCommandRegister = 'shortcut_menu_extender_register';
 const _kCommandUnregister = 'shortcut_menu_extender_unregister';
 
@@ -11,36 +14,54 @@ void registerShortcutMenu(
   required String executable,
   String? icon,
 }) {
-  String keyForFile = '*\\shell\\$key';
-  final regKeyForFile = Registry.classesRoot.createKey(keyForFile);
-  regKeyForFile.createValue(RegistryValue(
+  final regValueMenu = RegistryValue(
     '',
     RegistryValueType.string,
     name,
-  ));
-  final regKeyForFileCommand = regKeyForFile.createKey('command');
-  regKeyForFileCommand.createValue(RegistryValue(
+  );
+  final regValueMenuIcon = RegistryValue(
+    'Icon',
+    RegistryValueType.string,
+    icon ?? '',
+  );
+  final regValueMenuCommand = RegistryValue(
     '',
     RegistryValueType.string,
-    '$executable "%1"',
-  ));
-  if (icon != null) {
-    regKeyForFile.createValue(RegistryValue(
-      'Icon',
-      RegistryValueType.string,
-      icon,
-    ));
+    '$executable shortcut_menu_extender --key $key --path "%1"',
+  );
+  // Register shortcut menu for file.
+  final regKeyForFile = Registry.classesRoot.createKey('*\\shell\\$key');
+  regKeyForFile.createValue(regValueMenu);
+  if ((icon ?? '').isNotEmpty) {
+    regKeyForFile.createValue(regValueMenuIcon);
   }
+  final regKeyForFileCommand = regKeyForFile.createKey('command');
+  regKeyForFileCommand.createValue(regValueMenuCommand);
+
+  // Register shortcut menu for folder.
+  final regKeyForFolder = Registry.classesRoot.createKey('Folder\\shell\\$key');
+  regKeyForFolder.createValue(regValueMenu);
+  if ((icon ?? '').isNotEmpty) {
+    regKeyForFolder.createValue(regValueMenuIcon);
+  }
+  final regKeyForFolderCommand = regKeyForFolder.createKey('command');
+  regKeyForFolderCommand.createValue(regValueMenuCommand);
 }
 
 /// Unregister shortcut menu.
 void unregisterShortcutMenu(String key) {
-  String keyForFile = '*\\shell\\$key';
+  // Unregister shortcut menu for file.
+  final String keyForFile = '*\\shell\\$key';
   Registry.classesRoot.deleteKey(keyForFile, recursive: true);
+
+  // Unregister shortcut menu for folder.
+  final String keyForFolder = 'Folder\\shell\\$key';
+  Registry.classesRoot.deleteKey(keyForFolder, recursive: true);
 }
 
 class ShortcutMenuExtenderCommand {
   final ArgParser argParser = ArgParser()
+    ..addCommand(_kCommandMain, ArgParser())
     ..addCommand(
       _kCommandRegister,
       ArgParser()
@@ -56,27 +77,26 @@ class ShortcutMenuExtenderCommand {
 
   /// Run command if needed.
   bool runIfNeeded(List<String> args) {
-    final results = argParser.parse(args);
-    final command = results.command;
-    if (command == null) return false;
-    switch (command.name) {
-      case _kCommandRegister:
-        registerShortcutMenu(
-          command['key']!,
-          name: command['name']!,
-          executable: command['executable']!,
-          icon: command['icon'],
-        );
-        break;
-      case _kCommandUnregister:
-        unregisterShortcutMenu(
-          command['key']!,
-        );
-        break;
-      default:
-        return false;
-    }
-    return true;
+    try {
+      final results = argParser.parse(args);
+      final command = results.command;
+      switch (command?.name) {
+        case _kCommandRegister:
+          registerShortcutMenu(
+            command?['key']!,
+            name: Uri.decodeQueryComponent(command?['name']!),
+            executable: command?['executable']!,
+            icon: command?['icon'],
+          );
+          return true;
+        case _kCommandUnregister:
+          unregisterShortcutMenu(
+            command?['key']!,
+          );
+          return true;
+      }
+    } catch (_) {}
+    return false;
   }
 }
 

@@ -6,9 +6,16 @@ import 'package:shortcut_menu_extender_platform_interface/shortcut_menu_extender
 import 'package:win32/win32.dart';
 
 class ShortcutMenuExtenderWindows extends ShortcutMenuExtenderPlatform {
+  final _methodChannelImpl = MethodChannelShortcutMenuExtender();
+
   /// Registers the Windows implementation.
   static void registerWith() {
     ShortcutMenuExtenderPlatform.instance = ShortcutMenuExtenderWindows();
+  }
+
+  @override
+  Future<String?> getPlatformVersion() {
+    return _methodChannelImpl.getPlatformVersion();
   }
 
   @override
@@ -16,18 +23,22 @@ class ShortcutMenuExtenderWindows extends ShortcutMenuExtenderPlatform {
     String key, {
     required String name,
     required String executable,
-    String? icon,
+    bool useDefaultIcon = true,
   }) async {
     await _runWithAdministrator(Platform.resolvedExecutable, [
       'shortcut_menu_extender_register',
       '--key',
       key,
       '--name',
-      name,
-      '--icon',
-      icon ?? '$executable,0',
+      Uri.encodeQueryComponent(name),
+      ...useDefaultIcon
+          ? [
+              '--icon',
+              '$executable,0',
+            ]
+          : [],
       '--executable',
-      '$executable %1',
+      executable,
     ]);
   }
 
@@ -41,6 +52,16 @@ class ShortcutMenuExtenderWindows extends ShortcutMenuExtenderPlatform {
         key,
       ],
     );
+  }
+
+  @override
+  void addListener(ShortcutMenuListener listener) {
+    _methodChannelImpl.addListener(listener);
+  }
+
+  @override
+  void removeListener(ShortcutMenuListener listener) {
+    _methodChannelImpl.removeListener(listener);
   }
 
   Future<void> _runWithAdministrator(

@@ -1,5 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:shortcut_menu_extender_platform_interface/src/method_channel_shortcut_menu_extender.dart';
+import 'package:shortcut_menu_extender_platform_interface/src/shortcut_menu_listener.dart';
 
 abstract class ShortcutMenuExtenderPlatform extends PlatformInterface {
   /// Constructs a ShortcutMenuExtenderPlatform.
@@ -31,12 +32,20 @@ abstract class ShortcutMenuExtenderPlatform extends PlatformInterface {
     String key, {
     required String name,
     required String executable,
-    String? icon,
+    bool useDefaultIcon = true,
   }) {
     throw UnimplementedError('register() has not been implemented.');
   }
 
   Future<void> unregister(String key) {
     throw UnimplementedError('register() has not been implemented.');
+  }
+
+  void addListener(ShortcutMenuListener listener) {
+    throw UnimplementedError('addListener() has not been implemented.');
+  }
+
+  void removeListener(ShortcutMenuListener listener) {
+    throw UnimplementedError('removeListener() has not been implemented.');
   }
 }
