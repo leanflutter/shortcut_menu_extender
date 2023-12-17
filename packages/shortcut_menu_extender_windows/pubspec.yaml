@@ -1,5 +1,5 @@
 name: shortcut_menu_extender_windows
-description: "A new Flutter plugin project."
+description: "The Windows implementation of shortcut_menu_extender."
 version: 0.0.1
 homepage: https://github.com/leanflutter/shortcut_menu_extender
 

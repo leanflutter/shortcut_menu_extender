@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> with ShortcutMenuListener {
               onPressed: () {
                 shortcutMenuExtender.register(
                   _kShortcutMenuKeyMyFlutterApp,
-                  name: 'Open With MyFlutterApp',
+                  name: 'Open with MyFlutterApp',
                   executable: Platform.resolvedExecutable,
                   useDefaultIcon: true,
                 );

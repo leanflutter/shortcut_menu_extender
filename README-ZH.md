@@ -10,11 +10,11 @@
 
 [visits-count-image]: https://img.shields.io/badge/dynamic/json?label=Visits%20Count&query=value&url=https://api.countapi.xyz/hit/leanflutter.shortcut_menu_extender/visits
 
-This plugin allows Flutter apps to Extending global shortcut menus.
+这个插件允许 Flutter 应用扩展全局快捷菜单。
 
 ---
 
-English | [简体中文](./README-ZH.md)
+[English](./README.md) | 简体中文
 
 ---
 
@@ -22,40 +22,40 @@ English | [简体中文](./README-ZH.md)
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [shortcut\_menu\_extender](#shortcut_menu_extender)
-  - [Platform Support](#platform-support)
-  - [Quick Start](#quick-start)
-    - [Installation](#installation)
-    - [Usage](#usage)
+  - [平台支持](#平台支持)
+  - [快速开始](#快速开始)
+    - [安装](#安装)
+    - [用法](#用法)
         - [Windows](#windows)
-    - [Register/Unregister](#registerunregister)
-    - [Listening events](#listening-events)
-  - [Who's using it?](#whos-using-it)
-  - [License](#license)
+    - [注册/取消注册](#注册取消注册)
+    - [监听事件](#监听事件)
+  - [谁在用使用它？](#谁在用使用它)
+  - [许可证](#许可证)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Platform Support
+## 平台支持
 
 | Linux | macOS | Windows |
 | :---: | :---: | :-----: |
 |   ➖   |   ➖   |    ✔️    |
 
-## Quick Start
+## 快速开始
 
-### Installation
+### 安装
 
-Add this to your package's pubspec.yaml file:
+将此添加到你的软件包的 pubspec.yaml 文件：
 
 ```yaml
 dependencies:
   shortcut_menu_extender: ^0.1.0
 ```
 
-### Usage
+### 用法
 
 ##### Windows
 
-Change the file `windows/runner/main.cpp` as follows:
+更改文件 `windows/runner/main.cpp` 如下：
 
 ```diff
 #include <flutter/dart_project.h>
@@ -123,7 +123,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance,
 import 'package:shortcut_menu_extender/shortcut_menu_extender.dart';
 
 void main() async {
-  // Must add this line.
+  // 必须加上这一行。
   WidgetsFlutterBinding.ensureInitialized();
 
   if (shortcutMenuExtenderCommand.runIfNeeded(args)) exit(0);
@@ -132,7 +132,7 @@ void main() async {
 }
 ```
 
-### Register/Unregister
+### 注册/取消注册
 
 ```dart
 shortcutMenuExtender.register(
@@ -147,7 +147,7 @@ shortcutMenuExtender.unregister(
 );
 ```
 
-### Listening events
+### 监听事件
 
 ```dart
 class HomePage extends StatefulWidget {
@@ -182,12 +182,12 @@ class _HomePageState extends State<HomePage> with ShortcutMenuListener {
 }
 ```
 
-> Please see the example app of this plugin for a full example.
+> 请看这个插件的示例应用，以了解完整的例子。
 
-## Who's using it?
+## 谁在用使用它？
 
 - [闪电藤](https://github.com/cmlanche/lightningvine-docs) - 基于LocalSend二次开发的一款局域网文件传输工具
 
-## License
+## 许可证
 
 [MIT](./LICENSE)

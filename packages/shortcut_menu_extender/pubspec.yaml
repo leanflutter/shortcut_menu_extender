@@ -1,5 +1,5 @@
 name: shortcut_menu_extender
-description: "A new Flutter plugin project."
+description: "This plugin allows Flutter apps to Extending global shortcut menus."
 version: 0.0.1
 homepage: https://github.com/leanflutter/shortcut_menu_extender
 
