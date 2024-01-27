@@ -1,11 +1,11 @@
 name: shortcut_menu_extender_platform_interface
 description: "A common platform interface for the shortcut_menu_extender plugin."
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/leanflutter/shortcut_menu_extender
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
@@ -13,6 +13,6 @@ dependencies:
   plugin_platform_interface: ^2.0.2
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  mostly_reasonable_lints: ^0.1.1

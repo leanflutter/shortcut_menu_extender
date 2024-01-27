@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:args/args.dart';
 import 'package:win32_registry/win32_registry.dart';
 

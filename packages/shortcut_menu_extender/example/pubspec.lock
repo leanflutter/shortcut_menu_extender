@@ -49,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -77,10 +69,10 @@ packages:
     dependency: transitive
     description:
       name: file
-      sha256: "5fc22d7c25582e38ad9a8515372cd9a93834027aacf1801cf01164dac0ffa08c"
+      sha256: "1b92bec4fc2a72f59a8e15af5f52cd441e4a7860b49499d69dfa817af20e925d"
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.0"
+    version: "6.1.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -91,14 +83,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_lints:
-    dependency: "direct dev"
-    description:
-      name: flutter_lints
-      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -114,30 +98,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  leak_tracker:
-    dependency: transitive
-    description:
-      name: leak_tracker
-      sha256: "04be76c4a4bb50f14904e64749237e541e7c7bcf7ec0b196907322ab5d2fc739"
-      url: "https://pub.dev"
-    source: hosted
-    version: "9.0.16"
-  leak_tracker_testing:
-    dependency: transitive
-    description:
-      name: leak_tracker_testing
-      sha256: b06739349ec2477e943055aea30172c5c7000225f79dad4702e2ec0eda79a6ff
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.5"
   lints:
     dependency: transitive
     description:
       name: lints
-      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
+      sha256: cbf8d4b858bb0134ef3ef87841abdf8d63bfc255c266b7bf6b39daa1085c4290
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "3.0.0"
   matcher:
     dependency: transitive
     description:
@@ -150,18 +118,26 @@ packages:
     dependency: transitive
     description:
       name: material_color_utilities
-      sha256: "0e0a020085b65b6083975e499759762399b4475f766c21668c4ecca34ea74e5a"
+      sha256: "9528f2f296073ff54cb9fee677df673ace1218163c3bc7628093e7eed5203d41"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.0"
+    version: "0.5.0"
   meta:
     dependency: transitive
     description:
       name: meta
-      sha256: d584fa6707a52763a52446f02cc621b077888fb63b93bbcb1143a7be5a0c0c04
+      sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
-    version: "1.11.0"
+    version: "1.10.0"
+  mostly_reasonable_lints:
+    dependency: "direct dev"
+    description:
+      name: mostly_reasonable_lints
+      sha256: c61cc6b211f54188eef15e0ad7c9b00e8c001478ac253a52036ef7391b532b7c
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
   path:
     dependency: transitive
     description:
@@ -174,10 +150,10 @@ packages:
     dependency: transitive
     description:
       name: platform
-      sha256: "0a279f0707af40c890e80b1e9df8bb761694c074ba7e1d4ab1bc4b728e200b59"
+      sha256: ae68c7bfcd7383af3629daafb32fb4e8681c7154428da4febcff06200585f102
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.3"
+    version: "3.1.2"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -190,31 +166,31 @@ packages:
     dependency: transitive
     description:
       name: process
-      sha256: "266ca5be5820feefc777793d0a583acfc8c40834893c87c00c6c09e2cf58ea42"
+      sha256: "53fd8db9cec1d37b0574e12f07520d582019cb6c44abf5479a01505099a34a09"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.1"
+    version: "4.2.4"
   shortcut_menu_extender:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.1.0"
+    version: "0.1.1"
   shortcut_menu_extender_platform_interface:
     dependency: "direct overridden"
     description:
       path: "../../shortcut_menu_extender_platform_interface"
       relative: true
     source: path
-    version: "0.1.0"
+    version: "0.1.1"
   shortcut_menu_extender_windows:
     dependency: "direct overridden"
     description:
       path: "../../shortcut_menu_extender_windows"
       relative: true
     source: path
-    version: "0.1.0"
+    version: "0.1.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -288,26 +264,26 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: b3d56ff4341b8f182b96aceb2fa20e3dcb336b9f867bc0eafc0de10f1048e957
+      sha256: c538be99af830f478718b51630ec1b6bee5e74e52c8a802d328d9e71d35d2583
       url: "https://pub.dev"
     source: hosted
-    version: "13.0.0"
+    version: "11.10.0"
   web:
     dependency: transitive
     description:
       name: web
-      sha256: edc8a9573dd8c5a83a183dae1af2b6fd4131377404706ca4e5420474784906fa
+      sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.0"
+    version: "0.3.0"
   webdriver:
     dependency: transitive
     description:
       name: webdriver
-      sha256: "003d7da9519e1e5f329422b36c4dcdf18d7d2978d1ba099ea4e45ba490ed845e"
+      sha256: "3c923e918918feeb90c4c9fdf1fe39220fa4c0e8e2c0fffaded174498ef86c49"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.3"
+    version: "3.0.2"
   win32:
     dependency: transitive
     description:
@@ -325,4 +301,4 @@ packages:
     source: hosted
     version: "1.1.2"
 sdks:
-  dart: ">=3.2.0 <4.0.0"
+  dart: ">=3.2.0-194.0.dev <4.0.0"

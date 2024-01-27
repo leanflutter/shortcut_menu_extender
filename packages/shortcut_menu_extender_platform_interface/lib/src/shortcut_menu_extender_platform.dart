@@ -1,5 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:shortcut_menu_extender_platform_interface/src/method_channel_shortcut_menu_extender.dart';
+import 'package:shortcut_menu_extender_platform_interface/src/shortcut_menu_extender_method_channel.dart';
 import 'package:shortcut_menu_extender_platform_interface/src/shortcut_menu_listener.dart';
 
 abstract class ShortcutMenuExtenderPlatform extends PlatformInterface {

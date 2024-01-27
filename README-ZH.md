@@ -47,7 +47,7 @@
 
 ```yaml
 dependencies:
-  shortcut_menu_extender: ^0.1.0
+  shortcut_menu_extender: ^0.1.1
 ```
 
 ### 用法

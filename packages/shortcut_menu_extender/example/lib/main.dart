@@ -1,8 +1,8 @@
+import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:shortcut_menu_extender/shortcut_menu_extender.dart';
 
@@ -114,13 +114,15 @@ class _MyAppState extends State<MyApp> with ShortcutMenuListener {
               child: const Text('unregister 我的FlutterApp2'),
             ),
             Expanded(
-              child: ListView(children: [
-                for (final entity in _entities)
-                  ListTile(
-                    title: Text(entity.statSync().type.toString()),
-                    subtitle: Text(entity.path),
-                  ),
-              ]),
+              child: ListView(
+                children: [
+                  for (final entity in _entities)
+                    ListTile(
+                      title: Text(entity.statSync().type.toString()),
+                      subtitle: Text(entity.path),
+                    ),
+                ],
+              ),
             ),
           ],
         ),
@@ -139,7 +141,9 @@ class _MyAppState extends State<MyApp> with ShortcutMenuListener {
       }
       setState(() {});
     } else if (key == _kShortcutMenuKeyMyFlutterApp2) {
-      print('key: $key, path: $path');
+      if (kDebugMode) {
+        print('key: $key, path: $path');
+      }
     }
   }
 }
