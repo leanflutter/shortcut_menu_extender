@@ -12,19 +12,16 @@ void registerShortcutMenu(
   required String executable,
   String? icon,
 }) {
-  final regValueMenu = RegistryValue(
+  final regValueMenu = RegistryValue.string(
     '',
-    RegistryValueType.string,
     name,
   );
-  final regValueMenuIcon = RegistryValue(
+  final regValueMenuIcon = RegistryValue.string(
     'Icon',
-    RegistryValueType.string,
     icon ?? '',
   );
-  final regValueMenuCommand = RegistryValue(
+  final regValueMenuCommand = RegistryValue.string(
     '',
-    RegistryValueType.string,
     '$executable shortcut_menu_extender --key $key --path "%1"',
   );
   // Register shortcut menu for file.
