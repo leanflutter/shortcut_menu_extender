@@ -1,6 +1,6 @@
 name: shortcut_menu_extender_platform_interface
 description: "A common platform interface for the shortcut_menu_extender plugin."
-version: 0.1.1
+version: 0.2.0
 homepage: https://github.com/leanflutter/shortcut_menu_extender
 
 environment:

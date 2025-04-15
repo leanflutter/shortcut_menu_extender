@@ -200,21 +200,21 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.1.1"
+    version: "0.2.0"
   shortcut_menu_extender_platform_interface:
     dependency: "direct overridden"
     description:
       path: "../../shortcut_menu_extender_platform_interface"
       relative: true
     source: path
-    version: "0.1.1"
+    version: "0.2.0"
   shortcut_menu_extender_windows:
     dependency: "direct overridden"
     description:
       path: "../../shortcut_menu_extender_windows"
       relative: true
     source: path
-    version: "0.1.1"
+    version: "0.2.0"
   sky_engine:
     dependency: transitive
     description: flutter

@@ -1,6 +1,6 @@
 name: shortcut_menu_extender_windows
 description: "The Windows implementation of shortcut_menu_extender."
-version: 0.1.1
+version: 0.2.0
 homepage: https://github.com/leanflutter/shortcut_menu_extender
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
   ffi: ^2.1.0
   flutter:
     sdk: flutter
-  shortcut_menu_extender_platform_interface: ^0.1.1
+  shortcut_menu_extender_platform_interface: ^0.2.0
   win32: ^5.12.0
   win32_registry: ^2.1.0
 
